@@ -59,36 +59,23 @@ class PosisiKarakterGame {
   }
 
   checkSpecialOutput() {
-    if (this.nim % 3 === 1 && this.state === "Berdiri") {
-      console.log("Posisi standby");
+    if (this.nim % 3 === 1) {
+      if (this.state === "Berdiri") console.log("Posisi standby");
+      if (this.state === "Tengkurap") console.log("Posisi istirahat");
+    }
+    if (this.nim % 3 === 2) {
+      if (this.prevState === "Terbang" && this.state === "Jongkok")
+        console.log("Posisi landing");
+      if (this.prevState === "Berdiri" && this.state === "Terbang")
+        console.log("Posisi take off");
     }
   }
 
   ubahState(stateBaru) {
-    if (
-      this.state === "Terbang" &&
-      stateBaru === "Jongkok" &&
-      this.nim % 3 === 2
-    ) {
-      console.log("Posisi landing");
-    }
-    if (
-      this.state === "Berdiri" &&
-      stateBaru === "Terbang" &&
-      this.nim % 3 === 2
-    ) {
-      console.log("Posisi take off");
-    }
-    if (
-      this.state === "Berdiri" &&
-      stateBaru === "Tengkurap" &&
-      this.nim % 3 === 1
-    ) {
-      console.log("Posisi istirahat");
-    }
-
+    this.prevState = this.state;
     this.state = stateBaru;
     console.log(`State berubah menjadi: ${this.state}`);
+    this.checkSpecialOutput();
   }
 
   tekanTombol(tombol) {
