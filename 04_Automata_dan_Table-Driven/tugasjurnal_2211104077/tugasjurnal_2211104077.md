@@ -134,4 +134,4 @@ Method ini digunakan untuk memeriksa tombol yang ditekan (TombolS, TombolW, Tomb
 
 Output :
 
-![Image](https://github.com/user-attachments/assets/c4a50867-9cf9-4442-8589-5e6282f26992)
+![Image](https://github.com/user-attachments/assets/42367a38-4f40-4b86-ac1e-93f0763d2ba3)
