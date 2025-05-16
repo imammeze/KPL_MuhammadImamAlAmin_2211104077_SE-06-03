@@ -15,7 +15,7 @@ test("b > 10 atau a > 100 (hasil -2)", () => {
 });
 
 test("hasil melebihi batas maksimal (hasil -3)", () => {
-  expect(CariNilaiPangkat(2, 55)).toBe(-3);
+  expect(CariNilaiPangkat(101, 11)).toBe(-3);
 });
 
 test("hitung pangkat normal (dalam batas)", () => {
